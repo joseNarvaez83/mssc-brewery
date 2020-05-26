@@ -80,7 +80,7 @@ public class BeerControllerTest {
         BeerDto beerDto = validBeer;
         String beerDtoToJson = objectMapper.writeValueAsString(beerDto);
 
-        mockMvc.perform(put("/api/v1/beer/" + validBeer.getId())
+        mockMvc.perform(put("/api/v1/beer/" + validBeer.getId().toString())
                 .contentType(APPLICATION_JSON)
                 .content(beerDtoToJson))
                 .andExpect(status().isNoContent());
